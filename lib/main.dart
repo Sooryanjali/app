@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:loginfire/screens/home.dart';
 import 'package:loginfire/screens/signup.dart';
+import 'package:loginfire/screens/location.dart';
 //import 'package:loginfire/ProfileSc.dart';
 import 'dart:ui';
 
@@ -125,7 +126,7 @@ class _LoginState extends State<Login>
               padding: EdgeInsets.all(10.0),
               // ignore: prefer_const_constructors
               child: const Text(
-                'FLUTTER LOGIN',
+                'FindMyDoc App',
                 // ignore: unnecessary_const
                 style: TextStyle(
                   color: Colors.black,
@@ -179,7 +180,7 @@ class _LoginState extends State<Login>
                   print(user);
                   if(user!=null)
                   {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> Home()));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> LocationPage()));
                   }
                 },
                 
