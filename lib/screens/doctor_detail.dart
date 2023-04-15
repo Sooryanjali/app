@@ -14,16 +14,14 @@ class SliverDoctorDetail extends StatelessWidget {
         slivers: [
           SliverAppBar(
             pinned: true,
-            title: Text('Detail Doctor'),
-            backgroundColor: Color(MyColors.primary),
-            expandedHeight: 200,
-            flexibleSpace: FlexibleSpaceBar(
-              background: Image(
-                image: AssetImage('assets/hospital.jpeg'),
-                fit: BoxFit.cover,
-              ),
+            title: Text('Doctors available:',
+            style: TextStyle(
+              color: Colors.black
             ),
-          ),
+            ),
+            backgroundColor: Colors.indigo[50],
+            expandedHeight: 50,
+              ),
           SliverToBoxAdapter(
             child: DetailBody(),
           )
@@ -79,10 +77,6 @@ class DetailBody extends StatelessWidget {
           SizedBox(
             height: 25,
           ),
-          DoctorLocation(),
-          SizedBox(
-            height: 25,
-          ),
           ElevatedButton(
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(
@@ -98,34 +92,7 @@ class DetailBody extends StatelessWidget {
   }
 }
 
-class DoctorLocation extends StatelessWidget {
-  const DoctorLocation({
-    Key? key,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 200,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        /*child: FlutterMap(
-          options: MapOptions(
-            center: latLng.LatLng(51.5, -0.09),
-            zoom: 13.0,
-          ),
-          layers: [
-            TileLayerOptions(
-              urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-              subdomains: ['a', 'b', 'c'],
-            ),
-          ],
-        ),*/
-      ),
-    );
-  }
-}
 
 class DoctorInfo extends StatelessWidget {
   const DoctorInfo({
