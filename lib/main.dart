@@ -2,8 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:loginfire/screens/home.dart';
+import 'package:loginfire/screens/signup.dart';
 //import 'package:loginfire/ProfileSc.dart';
 import 'dart:ui';
+
+import 'package:loginfire/screens/signup.dart';
 
 void main() async{
   final FirebaseOptions options= FirebaseOptions(apiKey: "AIzaSyBtttA0eeIKRL-iPuV0nHtQPfJn97vwuHw",
@@ -192,7 +195,7 @@ class _LoginState extends State<Login>
                   'Sign in',
                   style: TextStyle(fontSize: 16),
                 ),
-                onPressed: () => print("done")
+                onPressed: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> SignUp())),
               ),
             ],
              mainAxisAlignment: MainAxisAlignment.center),
